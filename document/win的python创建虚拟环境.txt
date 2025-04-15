@@ -1,0 +1,5 @@
+# 创建新虚拟环境
+python -m venv .rag_in_action_new_venv
+
+# 激活虚拟环境
+.\.rag_in_action_new_venv\Scripts\activate

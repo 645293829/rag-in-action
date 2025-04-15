@@ -1,0 +1,1 @@
+pip install "unstructured[pdf,image]" 包和 grpcio包有冲突，建议重新建立一个虚拟环境

@@ -27,6 +27,8 @@ env/
 ENV/
 .env
 .venv
+.rag_in_action_new_venv
+.rag_in_action_new_venv.idea
 
 # IDE
 .idea/

@@ -3,6 +3,6 @@ from langchain_unstructured import UnstructuredLoader
 page_url = "https://zh.wikipedia.org/wiki/黑神话：悟空"
 loader = UnstructuredLoader(web_url=page_url)
 docs = loader.load()
-for doc in docs[:5]:
+for doc in docs[:50]:
     print(f'{doc.metadata["category"]}: {doc.page_content}')
 

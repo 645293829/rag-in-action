@@ -1,0 +1,24 @@
+# ==============================================windwos安装方式：==========================================
+
+# 下载安装包（推荐5.3.1版本）
+1. https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-5.3.1.20230401.exe
+
+2. 配置环境变量，比如tesseract.exe安装的位置是: D:\ocr， 则需要在系统环境变量的Path中写入【D:\ocr】即可
+
+3. 配置完环境变量后，重启编辑器
+
+# 安装完成后验证安装：
+4. tesseract --version
+
+# 然后在Python环境中安装pytesseract：
+5. pip install pytesseract
+
+
+# =============================================Linux-Ubuntu安装方式: =======================================
+pip install unstructured
+pip install "unstructured[image]"
+pip install "unstructured[md]"
+sudo apt-get install tesseract-ocr
+pip install pytesseract
+
+

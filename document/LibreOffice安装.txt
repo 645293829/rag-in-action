@@ -1,0 +1,13 @@
+1. pip install python-pptx
+
+# Windows用户请下载安装： 
+2. https://www.libreoffice.org/download/download/
+
+3. 直接点一次下载就行，因为点了下载会进入一个新页面，新页面不要点任何按钮，等一会他就会下载了。
+
+# Path下配置环境变量，只能安装到C盘，所以路径一般固定
+4. C:\Program Files\LibreOffice\program
+
+
+# 验证是否安装成功
+5. soffice --version

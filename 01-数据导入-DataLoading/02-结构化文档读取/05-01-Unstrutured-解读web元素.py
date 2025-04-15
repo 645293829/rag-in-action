@@ -7,7 +7,9 @@ def _get_setup_docs_from_url(url: str) -> List[Document]:
     setup_docs = []
     # parent_id = None  # 初始化 parent_id
     # current_parent = None  # 用于存储当前父元素
-    for doc in loader.load():
+
+    content = loader.load()
+    for doc in content:
         # 检查是否是 Title 或 Table
         if doc.metadata["category"] == "Title" or doc.metadata["category"] == "Table":
             parent_id = doc.metadata["element_id"]

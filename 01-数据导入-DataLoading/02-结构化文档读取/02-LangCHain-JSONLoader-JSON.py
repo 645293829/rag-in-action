@@ -2,7 +2,7 @@ from langchain_community.document_loaders import JSONLoader
 print("=== JSONLoader 加载结果 ===")
 print("1. 主角信息：")
 main_loader = JSONLoader(
-    file_path="data/西游记人物角色.json",
+    file_path="90-文档-Data/西游记人物角色.json",
     jq_schema='.mainCharacter | "姓名：" + .name + "，背景：" + .backstory',
     text_content=True
 )

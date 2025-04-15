@@ -1,5 +1,11 @@
+
+# 安装unstructured失败时，可以先清理下缓存
+# pip cache purge
+# pip install unstructured
+
+
 from unstructured.partition.text import partition_text
-text = "data/黑神话/黑神话悟空的设定.txt"
+text = "90-文档-Data/黑悟空/黑悟空设定.txt"
 elements = partition_text(text)
 for element in elements:
     print(element)
