@@ -5,13 +5,20 @@
 
 2. 配置环境变量，比如tesseract.exe安装的位置是: D:\ocr， 则需要在系统环境变量的Path中写入【D:\ocr】即可
 
-3. 配置完环境变量后，重启编辑器
+# 下载中文语言包
+3. github地址： https://github.com/tesseract-ocr/tessdata/tree/main
+   - 进入github点右面导航的release，下载压缩包
+   - 下载完毕之后将下载的语言包文件夹中的chi_sim.traineddata文件复制，放入Tesseract的tessdata目录（本机是D:\ocr\tessdata） 
+   - 其余的文件就可以删掉了
+
+
+4. 配置完环境变量后，重启编辑器
 
 # 安装完成后验证安装：
-4. tesseract --version
+5. tesseract --version
 
 # 然后在Python环境中安装pytesseract：
-5. pip install pytesseract
+6. pip install pdf2image pytesseract pillow
 
 
 # =============================================Linux-Ubuntu安装方式: =======================================

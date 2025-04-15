@@ -1,3 +1,5 @@
+# 使用pip install --upgrade pymupdf  安装PyMuPDF
+
 import fitz
 # 打开PDF文件
 doc = fitz.open("90-文档-Data/黑悟空/黑神话悟空.pdf")

@@ -1,0 +1,14 @@
+1. pip install marker-pdf[full]    # 直接安装所有类型的pdf转md
+
+# 使用可视化页面操作: 命令行输入marker_gui即可
+pip install streamlit
+marker_gui
+
+
+# 命令操作：这里举例： 将90-文档-Data/山西文旅/云冈石窟-en.pdf 转换成 markdown，并保存在 90-文档-Data/山西文旅/marker_output
+marker_single "90-文档-Data/山西文旅/云冈石窟-en.pdf" --output_dir "90-文档-Data/山西文旅/marker_output"
+
+
+
+# python操作
+请见：01-数据导入-DataLoading\04-PDF文件读取\使用marker工具将pdf转成markdown.py
