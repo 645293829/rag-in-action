@@ -9,7 +9,7 @@ from marker.output import text_from_rendered
 
 
 input_pdf = "90-文档-Data/山西文旅/云冈石窟/云冈石窟-en.pdf"
-output_dir = "90-文档-Data/山西文旅/云冈石窟"
+output_dir = "90-文档-Data/山西文旅/云冈石窟-md"
 # 确保输出目录存在
 os.makedirs(output_dir, exist_ok=True)
 

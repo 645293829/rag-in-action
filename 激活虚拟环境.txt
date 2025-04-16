@@ -1,0 +1,5 @@
+# 进入虚拟环境目录
+cd d:\python\pythonSpace\rag-in-action\.rag_in_action_new_venv\Scripts
+
+# 激活虚拟环境
+activate

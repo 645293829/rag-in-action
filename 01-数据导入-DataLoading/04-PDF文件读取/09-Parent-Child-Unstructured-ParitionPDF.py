@@ -1,12 +1,27 @@
 from unstructured.documents.elements import Title, NarrativeText, Text
 from unstructured.partition.pdf import partition_pdf
+import os
+import base64
+from PIL import Image
+from io import BytesIO
 
-file_path = '90-文档-Data/山西文旅/云冈石窟-en.pdf'
+
+file_path = '90-文档-Data/山西文旅/bsd_document.pdf'
 
 # 使用 unstructured 直接读取 PDF
 elements = partition_pdf(
     filename=file_path,
     strategy="hi_res",
+    # chunking_strategy="by_title",  # 按标题分块, 普通模式是Basic
+    # max_characters=6000,  # 每个分块的最大字符数
+    # new_after_n_chars=0,  # 在达到指定字符数后开始新分块
+    infer_table_structure=True,  # 推断表格结构
+    extract_images=True,  # 提取图像
+    image_format="png",  # 图像格式
+    # include_metadata=True,  # 包含元数据
+    extract_image_block_types=["Image", "Table"],          # 此选项允许您指定图像或元素的类型，例如“图像”或“表格”。
+    extract_image_block_to_payload=False,                  # 可用于将它们转换为base64格式，包括有关图像类型的详细信息，目前它始终是image/jpeg
+    extract_image_block_output_dir="path/to/save/images",  # 当不将提取的图像嵌入有效位置中时，可以使用它来指定保存提取的图像的文件系统路径
     # include_metadata=True,  # 如果需要位置信息
 )
 
@@ -26,7 +41,7 @@ if elements:
 
 # 仅筛选第一页的元素
 page_number = 1
-page_elements = [elem for elem in elements if getattr(elem.metadata, "page_number", None) == page_number]
+page_elements = [elem for elem in elements if getattr(elem.metadata, "page_number", None)]
 
 # 遍历并打印每个元素的详细信息
 for i, elem in enumerate(page_elements, 1):
@@ -34,6 +49,7 @@ for i, elem in enumerate(page_elements, 1):
     print(f"  内容: {elem.text}")
     print(f"  分类: {type(elem).__name__}")
     print(f"  ID: {getattr(elem, '_element_id', None)}")
+    print(f"  父ID: {getattr(elem.metadata, 'parent_id', None)}")
     print("="*50)
 
 # 仅筛选第一页的 Title
@@ -64,4 +80,4 @@ for title_data in title_dict.values():
         print("\n=== " + title_data["title"] + " ===")
         for content in title_data["content"]:
             print(content)
-        print() 
+        print()
