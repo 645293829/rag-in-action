@@ -43,6 +43,7 @@ if elements:
 page_number = 1
 page_elements = [elem for elem in elements if getattr(elem.metadata, "page_number", None)]
 
+# TODO 这里能不能获取到图片的保存时路径
 # 遍历并打印每个元素的详细信息
 for i, elem in enumerate(page_elements, 1):
     print(f"\nElement {i}:")
