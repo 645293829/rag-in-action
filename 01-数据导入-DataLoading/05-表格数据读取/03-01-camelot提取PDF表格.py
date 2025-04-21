@@ -1,3 +1,5 @@
+# pip install camelot
+# pip install ghostscript
 import camelot
 import pandas as pd
 # from ctypes.util import find_library

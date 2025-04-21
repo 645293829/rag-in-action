@@ -1,3 +1,5 @@
+# pip install pdfplumber
+
 import pdfplumber
 import pandas as pd
 import time
